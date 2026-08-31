@@ -75,4 +75,4 @@ This server implements concepts from the book **_Vibe Leading The AI: The Corpor
 Against Machines_** by Jean Machuca (ISBN 9798252505008, © 2026 Jean Machuca). The book
 is copyrighted commercial material; this repository does not republish its text. Buy the
 book at [https://vibeleading.org](https://vibeleading.org) or
-[https://a.co/d/04L5YatK](https://a.co/d/04L5YatK). See [NOTICE](NOTICE).
+[https://a.co/d/04L5YatK](https://a.co/d/04L5YatK). Author website: [jeanmachuca.com](https://jeanmachuca.com) · Support on GitHub Sponsors: [github.com/sponsors/jeanmachuca](https://github.com/sponsors/jeanmachuca). See [NOTICE](NOTICE).
