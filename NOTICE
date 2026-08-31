@@ -1,0 +1,20 @@
+# Notice
+
+This repository is an open-source (MIT) MCP server under the **VibeLeading** GitHub
+organization. It implements concepts from the book:
+
+> **_Vibe Leading The AI: The Corporate Race Against Machines_**
+> by Jean Machuca — ISBN 9798252505008 — © 2026 Jean Machuca
+
+The **book is copyrighted commercial material**. Its text, prose, illustrations, and
+cover are not covered by the MIT license and may not be reproduced or redistributed
+without the author's permission. Buy the book:
+- Website: https://vibeleading.org
+- Amazon: https://a.co/d/04L5YatK
+
+The **code and tooling in this repository** are licensed under the **MIT License**.
+This server provides the infrastructure the book's methodology describes and does not
+republish the book's narrative text.
+
+This notice is an attribution overlay to the MIT License, which governs this repository's
+code. See LICENSE for the full license text.
