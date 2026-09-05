@@ -32,5 +32,13 @@
     "vibe-leading",
     "ai"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VibeLeading/mcp-hybrid-data-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VibeLeading/mcp-hybrid-data-engine/issues"
+  },
+  "homepage": "https://github.com/VibeLeading/mcp-hybrid-data-engine#readme"
 }

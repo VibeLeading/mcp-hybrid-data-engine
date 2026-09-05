@@ -77,6 +77,25 @@ Add to your MCP client config (e.g. Claude Code `.mcp.json` or Cursor `mcp.json`
   `src/analytics-engine.ts` for the interface that a DuckDB / Parquet backend
   would implement.
 
+## Publishing
+
+Published to the npm registry via **OIDC trusted publishing** — no npm tokens stored
+anywhere. Pushing a version tag triggers the `.github/workflows/publish.yml` workflow:
+
+```bash
+npm version patch -m "release: v%s"
+git push origin main --follow-tags
+```
+
+- **One-time bootstrap.** The very first published version cannot use trusted
+  publishing (the trust relationship attaches to an existing package). Publish
+  `0.1.1` once manually (`npm publish` after `npm login`, or a short-lived
+  publish-scoped token), then configure **Trusted Publisher** on npmjs.com → the
+  package → Settings → Trusted publishing → GitHub Actions → owner
+  `VibeLeading`, repo `mcp-hybrid-data-engine`, workflow `publish.yml`, action
+  `allow npm publish` (requires 2FA once per package).
+- Requires **Node.js >= 22** and npm >= 11.5.1 on the runner (handled by the workflow).
+
 ## License & Attribution
 
 MIT — Copyright (c) 2026 Jean Machuca (see [LICENSE](LICENSE)).

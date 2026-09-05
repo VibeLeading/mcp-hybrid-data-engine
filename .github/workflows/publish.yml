@@ -1,0 +1,58 @@
+name: publish
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Upgrade npm (OIDC publishing needs >= 11.5.1)
+        run: |
+          npm install -g npm@^11.5.1
+          npm --version
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify dist entrypoint
+        run: test -f dist/index.js && test -x dist/index.js
+
+      - name: Pack sanity check
+        run: npm pack --dry-run
+
+      - name: Idempotency check (skip if version already on registry)
+        id: check
+        run: |
+          v=$(node -p "require('./package.json').version")
+          on_reg=$(npm view "${{ github.event.repository.name }}@$v" version 2>/dev/null || true)
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          if [ -n "$on_reg" ] && [ "$on_reg" = "$v" ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to npm (OIDC trusted publishing)
+        if: steps.check.outputs.exists != 'true'
+        run: npm publish --provenance --access public
