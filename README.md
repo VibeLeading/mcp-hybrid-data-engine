@@ -17,7 +17,17 @@ of the three data planes described in *Vibe Leading The AI*:
 npm install -g mcp-hybrid-data-engine
 # or run directly without installing:
 npx mcp-hybrid-data-engine
+# or run straight from the GitHub source (builds automatically):
+npx -y github:VibeLeading/mcp-hybrid-data-engine
 ```
+
+## Requirements
+
+- **Node.js >= 22** — required. The Stone relies on the built-in `node:sqlite`
+  module, which does not exist in older Node versions. If the server cannot
+  start (missing build or old Node), MCP clients report a generic
+  "connection closed" error.
+- No other runtime dependencies — everything ships with the package.
 
 ## Client configuration
 
