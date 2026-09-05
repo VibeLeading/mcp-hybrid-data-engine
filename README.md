@@ -1,4 +1,4 @@
-# mcp-hybrid-data-engine
+# @vibeleading/mcp-hybrid-data-engine
 
 The Memory Hub.
 
@@ -14,9 +14,9 @@ of the three data planes described in *Vibe Leading The AI*:
 ## Installation
 
 ```bash
-npm install -g mcp-hybrid-data-engine
+npm install -g @vibeleading/mcp-hybrid-data-engine
 # or run directly without installing:
-npx mcp-hybrid-data-engine
+npx -y @vibeleading/mcp-hybrid-data-engine
 # or run straight from the GitHub source (builds automatically):
 npx -y github:VibeLeading/mcp-hybrid-data-engine
 ```
@@ -29,6 +29,30 @@ npx -y github:VibeLeading/mcp-hybrid-data-engine
   "connection closed" error.
 - No other runtime dependencies — everything ships with the package.
 
+## Quick Start (Agent Setup)
+
+Give your agent the full VibeLeading methodology in one paste:
+
+> **Give me the Vibe Leading methodology: install the 5 agent skills so I can lead AI agents by intent + real-time telemetry, and add the 4 MCP servers so I get hands in the corporate engine.**
+>
+> **SKILLS (npx skills add):**
+> `npx skills add VibeLeading/mission-script VibeLeading/ira-prompting VibeLeading/hud-setup VibeLeading/pit-stop-audit VibeLeading/org-geometry`
+>
+> **MCP SERVERS (@vibeleading scope, add to MCP config):**
+> `@vibeleading/mcp-hybrid-data-engine`
+> `@vibeleading/mcp-document-architect`
+> `@vibeleading/mcp-real-time-scout`
+> `@vibeleading/mcp-privacy-shield`
+>
+> **ENV VARS:**
+> `MCP_STONE_PATH=data/stone.db`
+> `MCP_LIGHT_PATH=data/light.json`
+> `MCP_FLOW_PATH=data/flow.json`
+> `MCP_DOCS_ROOT=~/.vlb-docs`
+> `MCP_SHIELD_NAMES=1`
+
+Paste the block above into your AI agent (OpenCode, Claude Code, Cursor, Codex, etc.). It will install the skills, write the MCP config, and you're ready to lead.
+
 ## Client configuration
 
 Add to your MCP client config (e.g. Claude Code `.mcp.json` or Cursor `mcp.json`):
@@ -38,7 +62,7 @@ Add to your MCP client config (e.g. Claude Code `.mcp.json` or Cursor `mcp.json`
   "mcpServers": {
     "hybrid-data-engine": {
       "command": "npx",
-      "args": ["mcp-hybrid-data-engine"]
+      "args": ["-y", "@vibeleading/mcp-hybrid-data-engine"]
     }
   }
 }
