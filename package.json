@@ -1,15 +1,22 @@
 {
   "name": "mcp-hybrid-data-engine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server implementing the Vibe Leading Hybrid Data Engine (Stone + Light + Flow).",
   "type": "module",
-  "bin": { "mcp-hybrid-data-engine": "dist/index.js" },
-  "files": ["dist"],
-  "engines": { "node": ">=22" },
+  "bin": {
+    "mcp-hybrid-data-engine": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "tsc && chmod +x dist/index.js",
     "dev": "tsx src/index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "prepare": "tsc && node -e \"require('node:fs').chmodSync('dist/index.js', 0o755)\""
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"
@@ -19,6 +26,11 @@
     "tsx": "^4.19.0",
     "typescript": "^5.6.0"
   },
-  "keywords": ["mcp", "model-context-protocol", "vibe-leading", "ai"],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "vibe-leading",
+    "ai"
+  ],
   "license": "MIT"
 }
