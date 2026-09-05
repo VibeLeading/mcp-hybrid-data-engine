@@ -38,7 +38,7 @@ Give your agent the full VibeLeading methodology in one paste:
 > **SKILLS (npx skills add):**
 > `npx skills add VibeLeading/mission-script VibeLeading/ira-prompting VibeLeading/hud-setup VibeLeading/pit-stop-audit VibeLeading/org-geometry`
 >
-> **MCP SERVERS (@vibeleading scope, add to MCP config):**
+> **MCP SERVERS (@vibeleading scope, add to YOUR agent's MCP config):**
 > `@vibeleading/mcp-hybrid-data-engine`
 > `@vibeleading/mcp-document-architect`
 > `@vibeleading/mcp-real-time-scout`
@@ -50,6 +50,12 @@ Give your agent the full VibeLeading methodology in one paste:
 > `MCP_FLOW_PATH=data/flow.json`
 > `MCP_DOCS_ROOT=~/.vlb-docs`
 > `MCP_SHIELD_NAMES=1`
+>
+> **NOTE: MCP installation method varies by agent. Examples:**
+> - **OpenCode:** `opencode mcp add hybrid-data-engine -- npx -y @vibeleading/mcp-hybrid-data-engine`
+> - **Claude Code / Cursor:** add to `.mcp.json` / `claude_desktop_config.json` with `command=npx, args=[-y, @vibeleading/mcp-hybrid-data-engine]`
+> - **Codex:** configure via its MCP settings UI
+> Use the method appropriate for your agent.
 
 Paste the block above into your AI agent (OpenCode, Claude Code, Cursor, Codex, etc.). It will install the skills, write the MCP config, and you're ready to lead.
 
